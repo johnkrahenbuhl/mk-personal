@@ -1,5 +1,3 @@
-import { MoreHorizontalIcon } from "lucide-react";
-import melissa2Img from "../assets/beach.jpg";
 import familyImg from "../assets/family_photos3.jpg";
 
 export default function About2() {
