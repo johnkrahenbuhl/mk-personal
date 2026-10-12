@@ -25,7 +25,9 @@ export default function About() {
         <div className="flex flex-col gap-6">
           {/* <div className="text-xs font-bold font-medium tracking-[0.2em] text-earth uppercase"> */}
           {/* <div className="text-2xl leading-[118%] mb-2 font-bold font-medium tracking-[-0.24px] text-[#08060d] uppercase"></div> */}
-          <div className="text-2xl leading-[118%] mb-2 font-bold font-medium tracking-[-0.24px] text-[#08060d] uppercase">
+          {/* <div className="text-2xl leading-[118%] mb-2 font-bold font-medium tracking-[-0.24px] text-[#08060d] uppercase"> */}
+          {/*  <h2 className="text-xs font-bold tracking-[0.2em] text-earth uppercase"> */}
+          <div className="text-2xl text-[#08060d] font-medium tracking-[-0.24px] leading-[28.32px] uppercase text-left mb-2 antialiased ">
             The Problem That Led Me Here
           </div>
           <h3 className="font-serif text-4xl md:text-5xl text-charcoal leading-tight">
