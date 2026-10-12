@@ -23,9 +23,9 @@ export default function About() {
 
         {/* Right Column: Copy Content */}
         <div className="flex flex-col gap-6">
-          <h3 className="text-xs font-bold tracking-[0.2em] text-earth uppercase">
+          <div className="text-xs font-bold font-medium tracking-[0.2em] text-earth uppercase">
             The Problem That Led Me Here
-          </h3>
+          </div>
           <h3 className="font-serif text-4xl md:text-5xl text-charcoal leading-tight">
             I stopped asking what's next and started creating it...
           </h3>
