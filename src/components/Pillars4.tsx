@@ -6,7 +6,9 @@ export function Pillars() {
 
   const pillars = [
     {
-      icon: <Pause className="w-8 h-8 text-teal-600" />,
+      icon: (
+        <Pause className="w-8 h-8 text-teal-600 group-hover:text-white transition-colors" />
+      ),
       title: "Delayed Dreams",
       description: (
         <div className="text-left space-y-4">
@@ -45,7 +47,9 @@ export function Pillars() {
       ),
     },
     {
-      icon: <Waypoints className="w-8 h-8 text-teal-600" />,
+      icon: (
+        <Waypoints className="w-8 h-8 text-teal-600 group-hover:text-white transition-colors" />
+      ),
       title: "Pivotal Moment",
       description: (
         <div className="text-left space-y-4">
@@ -92,7 +96,9 @@ export function Pillars() {
       ),
     },
     {
-      icon: <PlaneTakeoff className="w-8 h-8 text-teal-600" />,
+      icon: (
+        <PlaneTakeoff className="w-8 h-8 text-teal-600 group-hover:text-white transition-colors" />
+      ),
       title: "Purpose & Freedom",
       description: (
         <div className="text-left space-y-4">
@@ -147,10 +153,7 @@ export function Pillars() {
                 className="bg-white rounded-2xl p-10 shadow-xl shadow-teal-900/5 hover:-translate-y-2 transition-transform duration-300 border border-slate-200 group flex flex-col cursor-pointer"
               >
                 <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 shrink-0">
-                  {React.cloneElement(pillar.icon as React.ReactElement, {
-                    className:
-                      "w-8 h-8 group-hover:text-white transition-colors",
-                  })}
+                  {pillar.icon}
                 </div>
 
                 <h3 className="text-2xl font-serif text-teal-950 font-bold mb-4 shrink-0">
