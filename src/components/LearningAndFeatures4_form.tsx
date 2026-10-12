@@ -72,9 +72,13 @@ Automated Web Form Notification`;
           {/* Left Side: Features */}
           <div className="lg:w-1/2">
             {/* Eyebrow Was Previously: Curriculum Highlights */}
-            <h2 className="text-sm font-bold tracking-widest text-teal-600 uppercase mb-3">
+            {/* Issue on Samsung Mobile with the below commented out h2 tag */}
+            {/* <h2 className="text-sm font-bold tracking-widest text-teal-600 uppercase mb-3">
               YOUR FUTURE IS ON THE HORIZON
-            </h2>
+            </h2> */}
+            <div className="text-[24px] text-[#08060d] font-medium tracking-[-0.24px] leading-[28.32px] uppercase mb-3">
+              YOUR FUTURE IS ON THE HORIZON
+            </div>
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-teal-950 mb-6 leading-tight">
               Unlock Your <span className="text-amber-500 italic">Highest</span>{" "}
               Potential
@@ -156,11 +160,11 @@ Automated Web Form Notification`;
                   required
                 />
 
-                <div className="flex items-start text-left gap-3 mt-6">
+                <div className="flex items-start text-left gap-3 mt-6 cursor-pointer">
                   <input
                     type="checkbox"
                     id="consent"
-                    className="mt-1 accent-earth"
+                    className="mt-1 accent-earth bg-white [color-scheme:light]"
                     required
                   />
                   <label

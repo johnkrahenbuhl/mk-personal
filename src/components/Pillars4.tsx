@@ -34,7 +34,7 @@ export function Pillars() {
             games, the everyday moments that you don't get back. So my coaching
             business never really took off.
           </p>
-          <p className="pb-3">But here's the thing:</p>
+          <p className="pb-4">But here's the thing:</p>
           {/* Issue on Samsung Mobile with the below commented out h2 tag */}
           {/* <h2 className="pb-3 italic font-bold text-teal-950">
             The dream didn't disappear, it just went on the shelf.
