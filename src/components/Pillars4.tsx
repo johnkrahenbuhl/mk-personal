@@ -35,9 +35,13 @@ export function Pillars() {
             business never really took off.
           </p>
           <p className="pb-3">But here's the thing:</p>
-          <h2 className="pb-3 italic font-bold text-teal-950">
+          {/* Issue on Samsung Mobile with the below commented out h2 tag */}
+          {/* <h2 className="pb-3 italic font-bold text-teal-950">
             The dream didn't disappear, it just went on the shelf.
-          </h2>
+          </h2> */}
+          <div className="text-[#08060d] [font-family:var(--heading)] text-[24px] font-medium italic tracking-[-0.24px] leading-[28.32px] text-left cursor-pointer block pb-[13.5px] mb-2 antialiased w-full max-w-[394px]">
+            The dream didn't disappear, it just went on the shelf.
+          </div>
           <p className="">
             Years later, I would realize that it wasn't gone at all. I was
             simply waiting for the right time, and the right opportunity, to
@@ -118,9 +122,13 @@ export function Pillars() {
             Today, I'm passionate about helping other people discover that same
             possibility—especially those who find themselves asking,
           </p>
-          <h2 className="italic font-bold text-teal-950">
+          {/* Issue on Samsung Mobile with the below commented out h2 tag */}
+          {/* <h2 className="italic font-bold text-teal-950">
             "What's next for me?"
-          </h2>
+          </h2> */}
+          <div className="text-[#08060d] [font-family:var(--heading)] text-[24px] font-medium italic tracking-[-0.24px] leading-[28.32px] text-left cursor-pointer block pb-[13.5px] mb-2 antialiased w-full max-w-[394px]">
+            "What's next for me?"
+          </div>
         </div>
       ),
     },
