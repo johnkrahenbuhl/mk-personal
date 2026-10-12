@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { PlaneTakeoff, Pause, Waypoints, ArrowDownCircle } from "lucide-react";
 
 export function Pillars() {
