@@ -72,7 +72,7 @@ export default function About2() {
           <img
             src={familyImg}
             alt="Melissa Krahenbuhl Leisure"
-            className="w-full h-auto object-cover shadow-lg aspect-[4/5]"
+            className="w-full h-auto shadow-lg"
           />
           <div className="bg-sand p-6 shadow-xl border border-stone w-full mt-6 relative z-10 md:absolute md:-bottom-8 md:-left-8 md:max-w-xs md:mt-0">
             <p className="text-sm italic text-gray-600 font-serif leading-relaxed">
