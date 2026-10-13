@@ -1,4 +1,4 @@
-import familyImg from "../assets/family_photos3.jpg";
+import familyImg from "../assets/melissa_family_photos.png";
 
 export default function About2() {
   return (
