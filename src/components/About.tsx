@@ -16,7 +16,8 @@ export default function About() {
           {/* Adjusted classes below: w-full and mt-6 for mobile, md: for desktop positioning */}
           <div className="bg-sand p-6 shadow-xl border border-stone w-full mt-6 relative z-10 md:absolute md:-bottom-8 md:-right-8 md:max-w-xs md:mt-0">
             <p className="text-sm italic text-gray-600 font-serif leading-relaxed">
-              "Today, I'm passionate about helping other people discover, "What's next for me?""
+              "Today, I'm passionate about helping other people discover,{" "}
+            <span className="font-bold text-slate-950"> 'What's next for me?'</span>"
             </p>
           </div>
         </div>
