@@ -17,7 +17,7 @@ export default function About() {
           <div className="bg-sand p-6 shadow-xl border border-stone w-full mt-6 relative z-10 md:absolute md:-bottom-8 md:-right-8 md:max-w-xs md:mt-0">
             <p className="text-sm italic text-gray-600 font-serif leading-relaxed">
               "I'm passionate about helping others discover,{" "}
-            <span className="font-bold text-slate-950"> 'What's next'</span>"
+            <span className="font-bold text-slate-950"> 'What's next' </span>"
             </p>
           </div>
         </div>
