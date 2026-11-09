@@ -111,7 +111,7 @@ export function Pillars() {
             meaningful, and that I could build for myself and grow over time.
           </p>
           <p className="pb-4">
-            That search eventually led me to I lead a global online education
+            That search eventually led me to lead a global online education
             platform dedicated to personal and leadership development. Working
             entirely remotely, I empower ambitious individuals worldwide to
             design a more intentional, spacious, and financially aligned life,
