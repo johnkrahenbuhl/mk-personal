@@ -16,7 +16,7 @@ export default function About() {
           {/* Adjusted classes below: w-full and mt-6 for mobile, md: for desktop positioning */}
           <div className="bg-sand p-6 shadow-xl border border-stone w-full mt-6 relative z-10 md:absolute md:-bottom-8 md:-right-8 md:max-w-xs md:mt-0">
             <p className="text-sm italic text-gray-600 font-serif leading-relaxed">
-              "My mission is to help others explore what's possible."
+              "Today, I'm passionate about helping other people discover, "What's next for me?""
             </p>
           </div>
         </div>
