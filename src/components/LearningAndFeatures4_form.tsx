@@ -10,6 +10,10 @@ export const LearningAndFeatures4 = () => {
     phone: "",
   });
 
+  // State tracking for submission UI
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
   const features = [
     {
       icon: <Sparkles className="w-6 h-6 text-amber-400" />,
@@ -32,37 +36,49 @@ export const LearningAndFeatures4 = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Reset status if user starts typing again after an error
+    if (submitStatus !== "idle") setSubmitStatus("idle");
   };
 
-  // Triggers when user clicks 'LEARN MORE' with all required inputs valid
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  // Triggers when user clicks submit
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-    const recipient = "radiantselfworth@gmail.com";
-    const subject = encodeURIComponent(
-      `New Lead Inquiry: Explore Opportunity - ${formData.firstName} ${formData.lastName}`,
-    );
+    const payload = {
+      access_key: "b8d023f1-6227-4bd9-b27d-3587fb78fdf2",
+      subject: `New Lead Inquiry: Explore Opportunity - ${formData.firstName} ${formData.lastName}`,
+      from_name: "Radiant Self Worth Website",
+      name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      phone: formData.phone,
+    };
 
-    // Structured body with clean formatting layout
-    const bodyContent = `Hello Radiant Self Worth Team,
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-A new lead has submitted interest via the web form.
-
---- LEAD DETAILS ---
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone Number: ${formData.phone}
-
-Consent Details:
-[X] User agreed to receive information regarding the online business and product line.
-
-Best regards,
-Automated Web Form Notification`;
-
-    const body = encodeURIComponent(bodyContent);
-
-    // Open user's native email client with pre-filled fields
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus("success");
+        // Clear the form fields
+        setFormData({ firstName: "", lastName: "", email: "", phone: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -71,11 +87,6 @@ Automated Web Form Notification`;
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Left Side: Features */}
           <div className="lg:w-1/2">
-            {/* Eyebrow Was Previously: Curriculum Highlights */}
-            {/* Issue on Samsung Mobile with the below commented out h2 tag */}
-            {/* <h2 className="text-sm font-bold tracking-widest text-teal-600 uppercase mb-3">
-              YOUR FUTURE IS ON THE HORIZON
-            </h2> */}
             <div className="text-[24px] text-[#08060d] font-medium tracking-[-0.24px] leading-[28.32px] uppercase mb-3">
               YOUR FUTURE IS ON THE HORIZON
             </div>
@@ -84,7 +95,6 @@ Automated Web Form Notification`;
               Potential
             </h3>
 
-            {/* Wrapped in a div to override sibling layout restrictions */}
             <div className="mb-8">
               <p className="text-slate-600 text-lg leading-relaxed">
                 Our comprehensive programs are designed to bridge the gap
@@ -178,16 +188,31 @@ Automated Web Form Notification`;
                   </label>
                 </div>
 
-                {/* Microcopy container with intentional padding and layout structure */}
+                {/* Status Messages */}
+                {submitStatus === "success" && (
+                  <div className="text-teal-700 bg-teal-50 border border-teal-200 text-sm p-3 rounded-md text-center mt-4">
+                    Thank you! Your information has been received. We will be in touch shortly.
+                  </div>
+                )}
+                {submitStatus === "error" && (
+                  <div className="text-red-700 bg-red-50 border border-red-200 text-sm p-3 rounded-md text-center mt-4">
+                    Something went wrong. Please try again or contact us directly.
+                  </div>
+                )}
+
                 <div className="mt-6 pt-2 text-center">
                   <button
                     type="submit"
-                    className="w-full rounded-full bg-teal-900 text-white tracking-widest font-medium py-4 hover:bg-teal-800 transition duration-300"
+                    disabled={isSubmitting}
+                    className={`w-full rounded-full tracking-widest font-medium py-4 transition duration-300 ${
+                      isSubmitting
+                        ? "bg-teal-700 text-teal-100 cursor-not-allowed opacity-80"
+                        : "bg-teal-900 text-white hover:bg-teal-800"
+                    }`}
                   >
-                    START TODAY
+                    {isSubmitting ? "SENDING..." : "START TODAY"}
                   </button>
 
-                  {/* Microcopy Text forced to a second line after 'hours' */}
                   <p className="text-xs text-slate-400 italic pt-4 balance leading-relaxed">
                     We will call you within 24 hours
                     <br className="hidden sm:inline" /> to chat about your
